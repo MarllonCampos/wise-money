@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "wise-money",
+    "slug": "wise-money",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
