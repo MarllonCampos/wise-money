@@ -5,7 +5,7 @@ import Colors from "../../Colors";
 // import { Container } from './styles';
 interface Props extends ViewProps {}
 export function Separator(props: Props) {
-  return <View {...props} style={styles.separator} />;
+  return <View {...props} style={[styles.separator, props.style]} />;
 }
 
 const styles = StyleSheet.create({

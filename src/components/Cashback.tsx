@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, SVGProps, useEffect, useRef, useState } from "react";
+import React, { ReactNode } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { SvgProps, SvgXml } from "react-native-svg";
 import Colors from "../../Colors";

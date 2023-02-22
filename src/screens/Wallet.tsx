@@ -4,6 +4,7 @@ import Colors from "../../Colors";
 import Fonts from "../../Fonts";
 import { Cashback } from "../components/Cashback";
 import { WalletDepositInvest } from "../components/WalletDepositInvest";
+import { Warnings } from "../components/Warnings";
 
 export function WalletScreen() {
   return (
@@ -12,6 +13,7 @@ export function WalletScreen() {
         <Text style={styles.results}>Resultados</Text>
         <WalletDepositInvest />
         <Cashback />
+        <Warnings />
       </View>
     </View>
   );
