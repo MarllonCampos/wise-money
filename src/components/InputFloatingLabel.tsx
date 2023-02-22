@@ -59,7 +59,7 @@ export function InputFloatingLabel({
       />
 
       {secure && (
-        <TouchableOpacity onPress={() => setIsPasswordShowing((prevState) => !prevState)}>
+        <TouchableOpacity onPress={() => setIsPasswordShowing((prevState) => !prevState)} style={styles.eyesButton}>
           {isPasswordShowing ? <EyesOpen style={styles.eyes} /> : <EyesClosed fontSize={12} style={styles.eyes} />}
         </TouchableOpacity>
       )}
@@ -77,11 +77,10 @@ const styles = StyleSheet.create({
     borderColor: Colors.black[400],
     flexDirection: "row",
     alignItems: "center",
-    paddingRight: 8,
   },
   labelStyle: {
     position: "absolute",
-    top: 13,
+    top: 11,
     left: 14,
     fontFamily: Fonts.Roboto.regular,
     color: Colors.black[400],
@@ -99,6 +98,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
     flex: 1,
     marginRight: 8,
+  },
+  eyesButton: {
+    height: "100%",
+    justifyContent: "center",
+    paddingRight: 8,
   },
   eyes: {
     maxWidth: 16,
