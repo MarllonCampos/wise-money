@@ -25,18 +25,18 @@ export function WalletScreen() {
       <View style={styles.insideContainer}>
         <InabilityToPay
           title="Inadimplência - Carteira Individual"
-          monthPercentage={1.87}
-          twoMonthsPercentage={1.18}
-          quarterPercentage={0.59}
+          monthPercentage={"1,87"}
+          twoMonthsPercentage={"1,18"}
+          quarterPercentage={"0,59"}
           color={Colors.green[900]}
         />
       </View>
       <View style={styles.insideContainer}>
         <InabilityToPay
           title="Inadimplência - Carteira WiseMoney"
-          monthPercentage={1.44}
-          twoMonthsPercentage={0.96}
-          quarterPercentage={0.67}
+          monthPercentage={"1,44"}
+          twoMonthsPercentage={"0,96"}
+          quarterPercentage={"0,67"}
           color={Colors.blue}
         />
       </View>

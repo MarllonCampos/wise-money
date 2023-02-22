@@ -10,9 +10,9 @@ import { Separator } from "./Separator";
 
 interface Props {
   title: string;
-  monthPercentage: number;
-  twoMonthsPercentage: number;
-  quarterPercentage: number;
+  monthPercentage: string;
+  twoMonthsPercentage: string;
+  quarterPercentage: string;
   color: string;
 }
 export function InabilityToPay({ monthPercentage, quarterPercentage, title, twoMonthsPercentage, color }: Props) {
