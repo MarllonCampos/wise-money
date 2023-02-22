@@ -3,6 +3,7 @@ import { View, StyleSheet, Text, SafeAreaView } from "react-native";
 import Colors from "../../Colors";
 import Fonts from "../../Fonts";
 import { Cashback } from "../components/Cashback";
+import { FeeReturnAverage } from "../components/FeeReturnAverage";
 import { WalletDepositInvest } from "../components/WalletDepositInvest";
 import { Warnings } from "../components/Warnings";
 
@@ -14,6 +15,7 @@ export function WalletScreen() {
         <WalletDepositInvest />
         <Cashback />
         <Warnings />
+        <FeeReturnAverage />
       </View>
     </View>
   );

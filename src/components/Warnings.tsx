@@ -4,6 +4,7 @@ import Colors from "../../Colors";
 import MoneyUp from "../assets/money-up.svg";
 import TotalDelay from "../assets/total-delay.svg";
 import Fonts from "../../Fonts";
+import { HorizontalSeparator } from "./HorizontalSeparator";
 
 export function Warnings() {
   function formatCurrencyToBRL(value: number) {
@@ -22,7 +23,7 @@ export function Warnings() {
         </Text>
       </View>
       <View style={{ width: "100%", alignItems: "center" }}>
-        <View style={styles.horizontalSeparator} />
+        <HorizontalSeparator />
       </View>
       <View style={styles.contentContainer}>
         <TotalDelay style={{ width: 20, height: 26 }} />
