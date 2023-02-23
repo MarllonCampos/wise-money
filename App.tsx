@@ -5,6 +5,7 @@ import { useFonts, Manrope_800ExtraBold, Manrope_700Bold, Manrope_500Medium } fr
 import { Roboto_500Medium, Roboto_400Regular } from "@expo-google-fonts/roboto";
 import { Loading } from "./src/components/Loading";
 import { Routes } from "./src/routes";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 export default function App() {
   const [fontsLoaded] = useFonts({
     Manrope_500Medium,
@@ -18,11 +19,13 @@ export default function App() {
   if (!fontsLoaded) return <Loading />;
   return (
     <SafeAreaView style={{ flex: 1, paddingTop: Platform.OS === "android" ? StatusBarManager.HEIGHT : 0 }}>
-      <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === "ios" ? "padding" : undefined}>
-        <Routes />
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === "ios" ? "padding" : undefined}>
+          <Routes />
 
-        <StatusBar style="dark" />
-      </KeyboardAvoidingView>
+          <StatusBar style="dark" />
+        </KeyboardAvoidingView>
+      </GestureHandlerRootView>
     </SafeAreaView>
   );
 }

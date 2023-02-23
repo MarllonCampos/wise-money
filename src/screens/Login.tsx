@@ -9,6 +9,7 @@ import {
   TouchableWithoutFeedback,
   View,
   ActivityIndicator,
+  Platform,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { InputFloatingLabel } from "../components/InputFloatingLabel";
@@ -17,6 +18,7 @@ import Colors from "../../Colors";
 import Fonts from "../../Fonts";
 import WiseMoneyLogo from "../assets/wiseMoney.svg";
 import { API_BASE_URL, API_KEY } from "@env";
+import analytics from "@react-native-firebase/analytics";
 
 export function Login() {
   const [email, setEmail] = useState("");
@@ -26,6 +28,23 @@ export function Login() {
 
   async function saveInfoOnAsyncStorage(data: string) {
     await AsyncStorage.setItem("@wise-money", JSON.stringify(data));
+  }
+
+  function handleAnalytics(data: string) {
+    console.log("handleAnalytics", { data });
+    const x = analytics()
+      .getAppInstanceId()
+      .then((x) => x);
+    console.log(x);
+
+    analytics()
+      .logEvent("customized_event", {
+        method: "raw",
+        platform: Platform.OS,
+        data,
+      })
+      .then((x) => console.log(x))
+      .catch((err) => console.log(err));
   }
 
   async function getInfoOnAsyncStorage(): Promise<string> {
@@ -52,6 +71,7 @@ export function Login() {
         throw new Error(responseJson.message);
       }
       saveInfoOnAsyncStorage(responseJson);
+      handleAnalytics(responseJson);
       navigate("tabs");
     } catch (error: any) {
       Alert.alert("Error", error.message);

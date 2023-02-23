@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "539154113267",
+    "project_id": "wise-money-dc65a",
+    "storage_bucket": "wise-money-dc65a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:539154113267:android:bfbc7bc3651629726dcd86",
+        "android_client_info": {
+          "package_name": "com.wisemoney"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "539154113267-iv7g34rd4fcmm59m5ma5s9im3p2mrgk6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwD8JpthFJme0wxs-S45B19ZrfpZJbvjo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "539154113267-iv7g34rd4fcmm59m5ma5s9im3p2mrgk6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

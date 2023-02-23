@@ -10,9 +10,6 @@
         </domain-config>
 
         <domain includeSubdomains="true">my.domain.com</domain>
-        <trust-anchors>
-            <certificates src="@raw/ca"/>
-            <certificates src="system"/>
-        </trust-anchors>
+
     </domain-config>
 </network-security-config>

@@ -3,6 +3,7 @@ package com.wisemoney;
 import android.app.Application;
 import android.content.Context;
 import android.content.res.Configuration;
+import android.net.Uri;
 import androidx.annotation.NonNull;
 
 import com.facebook.react.PackageList;
@@ -13,12 +14,14 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.config.ReactFeatureFlags;
 import com.facebook.soloader.SoLoader;
 import com.wisemoney.newarchitecture.MainApplicationReactNativeHost;
-
 import expo.modules.ApplicationLifecycleDispatcher;
 import expo.modules.ReactNativeHostWrapper;
+import expo.modules.updates.UpdatesController;
+import io.invertase.firebase.app.ReactNativeFirebaseAppPackage;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
+import javax.annotation.Nullable;
 
 public class MainApplication extends Application implements ReactApplication {
   private final ReactNativeHost mReactNativeHost = new ReactNativeHostWrapper(
@@ -34,7 +37,6 @@ public class MainApplication extends Application implements ReactApplication {
       @SuppressWarnings("UnnecessaryLocalVariable")
       List<ReactPackage> packages = new PackageList(this).getPackages();
       // Packages that cannot be autolinked yet can be added manually here, for example:
-      // packages.add(new MyReactNativePackage());
       return packages;
     }
 
@@ -72,6 +74,29 @@ public class MainApplication extends Application implements ReactApplication {
     super.onConfigurationChanged(newConfig);
     ApplicationLifecycleDispatcher.onConfigurationChanged(this, newConfig);
   }
+
+   @Override
+   protected @Nullable String getJSBundleFile() {
+     if (BuildConfig.DEBUG) {
+       return super.getJSBundleFile();
+     } else {
+       return UpdatesController.getInstance().getLaunchAssetFile();
+     }
+   }
+
+   @Override
+   protected @Nullable String getBundleAssetName() {
+     if (BuildConfig.DEBUG) {
+       return super.getBundleAssetName();
+     } else {
+       return UpdatesController.getInstance().getBundleAssetName();
+     }
+   }
+
+
+   if (!BuildConfig.DEBUG) {
+     UpdatesController.initialize(this);
+   }
 
   /**
    * Loads Flipper in React Native templates. Call this in the onCreate method with something like
