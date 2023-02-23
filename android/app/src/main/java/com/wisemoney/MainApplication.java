@@ -37,6 +37,7 @@ public class MainApplication extends Application implements ReactApplication {
       @SuppressWarnings("UnnecessaryLocalVariable")
       List<ReactPackage> packages = new PackageList(this).getPackages();
       // Packages that cannot be autolinked yet can be added manually here, for example:
+      // packages.add(new ReactNativeFirebaseAppPackage())
       return packages;
     }
 
@@ -75,28 +76,8 @@ public class MainApplication extends Application implements ReactApplication {
     ApplicationLifecycleDispatcher.onConfigurationChanged(this, newConfig);
   }
 
-   @Override
-   protected @Nullable String getJSBundleFile() {
-     if (BuildConfig.DEBUG) {
-       return super.getJSBundleFile();
-     } else {
-       return UpdatesController.getInstance().getLaunchAssetFile();
-     }
-   }
-
-   @Override
-   protected @Nullable String getBundleAssetName() {
-     if (BuildConfig.DEBUG) {
-       return super.getBundleAssetName();
-     } else {
-       return UpdatesController.getInstance().getBundleAssetName();
-     }
-   }
 
 
-   if (!BuildConfig.DEBUG) {
-     UpdatesController.initialize(this);
-   }
 
   /**
    * Loads Flipper in React Native templates. Call this in the onCreate method with something like
